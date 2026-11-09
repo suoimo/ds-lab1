@@ -1,0 +1,17 @@
+model_metadata:
+  model_name: enterprise_prepaid_churn_rf
+  model_version: v1.0.0
+  framework: scikit-learn
+  created_at: '2026-11-02T11:42:59.793611+00:00'
+source_code_lineage:
+  git_commit_sha: 95672c6f7b6593660cc2def5c5259fd2fe280d56
+  working_tree_dirty: true
+  pipeline_entrypoint: python3 src/churn/train.py --config configs/train_churn.yaml
+data_lineage:
+  dataset_path: data/fixtures/sample_churn.csv
+  dataset_sha256: 76c68b8c71ea226ff92e12fd4f88bd32637c96c46defff4edb3834791b9def1d
+  total_records: 20
+evaluation_metrics:
+  pr_auc: 1.0
+  roc_auc: 1.0
+  quality_gate_passed: true

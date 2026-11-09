@@ -1,0 +1,26 @@
+# Cấu hình tham số huấn luyện mô hình Churn Prediction
+dataset:
+  raw_path: "data/fixtures/sample_churn.csv"
+  test_size: 0.25
+  random_state: 42
+
+features:
+  velocity_windows: [7, 30]
+  categorical_cols:
+    - "contract_type"
+  numerical_cols:
+    - "tenure_months"
+    - "monthly_charges"
+    - "total_charges"
+    - "data_velocity_7d_30d"
+
+model:
+  algorithm: "random_forest"
+  n_estimators: 100
+  max_depth: 4
+  random_state: 42
+
+manifest:
+  output_path: "models/manifests/model_manifest.yaml"
+  model_name: "enterprise_prepaid_churn_rf"
+  model_version: "v1.0.0"

@@ -1,0 +1,102 @@
+# ==============================================================================
+# 1. PYTHON RUNTIME & VIRTUAL ENVIRONMENTS
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ==============================================================================
+# 2. JUPYTER NOTEBOOK CHECKPOINTS & CACHE
+# ==============================================================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ==============================================================================
+# 3. SECRETS & CREDENTIALS (BẢO MẬT TUYỆT ĐỐI)
+# ==============================================================================
+*.env
+*.pem
+*.key
+*.cert
+*.id_rsa
+secrets.yaml
+credentials.json
+service_account.json
+
+# ==============================================================================
+# 4. LARGE DATASETS & DATA LAKE SNAPS (QUẢN LÝ BẰNG DVC / S3)
+# ==============================================================================
+# Chặn toàn bộ thư mục dữ liệu vật lý
+data/raw/*
+data/processed/*
+data/external/*
+data/interim/*
+
+# NGOẠI LỆ CÓ CHỦ ĐÍCH: Cho phép commit dữ liệu mẫu nhỏ (< 1MB) phục vụ Unit Test!
+!data/fixtures/
+!data/fixtures/*
+
+# Chặn file dữ liệu tự do trên toàn bộ repository
+*.csv
+*.parquet
+*.pq
+*.feather
+*.h5
+*.hdf5
+*.tar.gz
+*.zip
+*.7z
+# Ngoại lệ: Cho phép file csv/parquet trong fixtures
+!data/fixtures/*.csv
+!data/fixtures/*.parquet
+
+# ==============================================================================
+# 5. MODEL CHECKPOINTS & ARTIFACTS (QUẢN LÝ BẰNG MLFLOW / REGISTRY)
+# ==============================================================================
+models/*.pkl
+models/*.joblib
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.bin
+models/*.h5
+models/*.weights
+
+# Ngoại lệ: Cho phép commit các file Manifest truy vết
+!models/manifests/
+!models/manifests/*
+
+# ==============================================================================
+# 6. LOGS & EXPERIMENT TRACKING
+# ==============================================================================
+*.log
+logs/
+mlruns/
+wandb/
+.neptune/
+catboost_info/

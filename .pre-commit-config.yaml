@@ -1,0 +1,24 @@
+repos:
+  # 1. Tự động loại bỏ output của Jupyter Notebook trước khi commit
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout
+
+  # 2. Các hook định dạng và an ninh tệp tin cơ bản
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+
+  # 3. Kiểm tra chuẩn cú pháp Python PEP 8
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        args: ['--max-line-length=100', '--extend-ignore=E203,W503']
+        files: ^(src|tests)/
