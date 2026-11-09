@@ -1,5 +1,6 @@
 # Lab 1: Dự án Thực hành Quản lý Source Code & Scaffold MLOps Chuẩn Doanh nghiệp
 
+
 **Lab 1: Tổng quan Data Science & Quản lý Source Code trong MLOps**.  
 Dự án này là một phiên bản rút gọn, độc lập và hoàn chỉnh của hệ thống dự báo thuê bao rời mạng (**Telecom Churn Prediction System**), được thiết kế chuẩn mực theo mô hình công nghiệp.
 
